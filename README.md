@@ -51,13 +51,9 @@ export PATH="$HOME/.local/bin":$PATH
 
 # User configuration
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+# Configs
+alias zshconfig="nvim ~/.zshrc"
+alias tmuxconfig="nvim ~/.tmux.conf"
 
 # yarn aliases
 alias y="yarn"
@@ -76,6 +72,27 @@ alias gps="git push"
 alias gfo="git fetch origin"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
 alias glo="git log --oneline"
+
+# TMux Aliases
+alias tmns="tmux new-session -s"
+alias tma="tmux attach-session -t"
+alias tml="tmux list-sessions"
+alias tmk="tmux kill-session -t"
+alias tmd="tmux detach"
+alias tmrename="tmux rename-window"
+alias tmv="tmux split-window -v"
+alias tmh="tmux split-window -h"
+alias tmnw="tmux new-window"
+alias tmnext="tmux next-window"
+alias tmprev="tmux previous-window"
+alias tmsw="tmux select-window -t"
+alias tmresize="tmux resize-pane"
+alias tmsync="tmux setw synchronize-panes on"
+alias tmunsync="tmux setw synchronize-panes off"
+alias tmsend="tmux send-keys"
+alias tmcapture="tmux capture-pane -S -"
+alias tmsave="tmux save-buffer -b"
+alias tmconf="tmux show-options -g"
 
 # Playwright Aliases
 alias codegen="npx playwright codegen localhost:3000"
