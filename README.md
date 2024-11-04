@@ -46,14 +46,20 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# LunarVim
-export PATH="$HOME/.local/bin":$PATH
-
 # User configuration
 
+# Conditional to use nvim instead of vim if nvim is installed
+if command -v nvim &> /dev/null; then
+  alias vim='nvim'
+  alias vi='nvim'
+else
+  alias vim='vim'
+  alias vi='vim'
+fi
+
 # Configs
-alias zshconfig="nvim ~/.zshrc"
-alias tmuxconfig="nvim ~/.tmux.conf"
+alias zshconfig="vim ~/.zshrc"
+alias tmuxconfig="vim ~/.tmux.conf"
 
 # yarn aliases
 alias y="yarn"
@@ -74,25 +80,23 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 alias glo="git log --oneline"
 
 # TMux Aliases
-alias tmns="tmux new-session -s"
-alias tma="tmux attach-session -t"
-alias tml="tmux list-sessions"
-alias tmk="tmux kill-session -t"
-alias tmd="tmux detach"
-alias tmrename="tmux rename-window"
-alias tmv="tmux split-window -v"
-alias tmh="tmux split-window -h"
-alias tmnw="tmux new-window"
-alias tmnext="tmux next-window"
-alias tmprev="tmux previous-window"
-alias tmsw="tmux select-window -t"
-alias tmresize="tmux resize-pane"
-alias tmsync="tmux setw synchronize-panes on"
-alias tmunsync="tmux setw synchronize-panes off"
-alias tmsend="tmux send-keys"
-alias tmcapture="tmux capture-pane -S -"
-alias tmsave="tmux save-buffer -b"
-alias tmconf="tmux show-options -g"
+alias tns="tmux new-session -s"
+alias ta="tmux attach-session -t"
+alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
+alias td="tmux detach"
+alias trename="tmux rename-window"
+alias tv="tmux split-window -v"
+alias th="tmux split-window -h"
+alias tnw="tmux new-window"
+alias tnext="tmux next-window"
+alias tprev="tmux previous-window"
+alias tsw="tmux select-window -t"
+alias tresize="tmux resize-pane"
+alias tsync="tmux setw synchronize-panes on"
+alias tunsync="tmux setw synchronize-panes off"
+alias tsend="tmux send-keys"
+alias tcapture="tmux capture-pane -S -"
 
 # Playwright Aliases
 alias codegen="npx playwright codegen localhost:3000"
